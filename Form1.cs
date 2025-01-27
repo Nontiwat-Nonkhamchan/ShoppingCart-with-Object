@@ -10,14 +10,11 @@
         public Form1()
         {
             InitializeComponent();
-
-            // สร้างวัตถุสำหรับแต่ละเมนู
             itemCoffee = new Item("Coffee", 75);
-            itemGreenTea = new Item("Green Tea", 85);
-            itemNoodle = new Item("Noodle", 120);
-            itemPizza = new Item("Pizza", 200);
+            itemGreenTea = new Item("Green Tea", 55);
+            itemNoodle = new Item("Noodle", 80);
+            itemPizza = new Item("Pizza", 150);
 
-            // แสดงข้อมูลเริ่มต้น
             UpdateItemDisplay();
         }
         private void UpdateItemDisplay()
@@ -35,10 +32,6 @@
             tbPizzaQuantity.Text = itemPizza.Quantity.ToString();
         }
 
-
-        //Function or Method
-        // 1. return data
-        // 2. no return data
         double getPriceFromSelectedItems()
         {
             string strCoffeePrice = tbCoffeePrice.Text;
@@ -63,14 +56,7 @@
             double dTotal = getDiscountPrice(iPrice, "BEV");
             return dTotal;
         }
-        /// <summary>
-        /// Funtion to calculate item price with discount
-        /// </summary>
-        /// <param name="pTotal">total price of item</param>
-        /// <param name="pType">type of item: ALL, BEV, FOOD</param>
-        /// <returns></returns>
-        /// 
-
+        
         private double GetItemTotal(Item item)
         {
             if (!item.IsChecked)
@@ -135,8 +121,6 @@
                 {
                     MessageBox.Show("กรุณากรอกข้อมูลตัวเลขให้ถูกต้อง", "ข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            
 
         }  
 
